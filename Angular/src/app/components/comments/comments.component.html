@@ -1,0 +1,15 @@
+<!-- add-comment.component.html -->
+
+<div class="container mt-5">
+  <form [formGroup]="commentForm" (ngSubmit)="addComment()" class="mt-4">
+    <div class="mb-3">
+      <label for="player" class="form-label">Player</label>
+      <input type="text" id="player" class="form-control" formControlName="player" placeholder="Enter player's name">
+    </div>
+    <div class="mb-3">
+      <label for="comment_text" class="form-label">Comment</label>
+      <textarea id="comment_text" class="form-control" formControlName="comment_text" rows="3" placeholder="Enter your comment"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!commentForm.valid">Mandar comentario</button>
+  </form>
+</div>

@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="assets/img/logo.jpg" width="200px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarColor01" *ngIf="!isLoggedIn()">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/how_to_play" routerLinkActive="active">Como jugar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/download" routerLinkActive="active">Descarga</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register" routerLinkActive="active">Registro</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarColor01" *ngIf="isLoggedIn()">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/show_users" routerLinkActive="active">Mostrar usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/add_user" routerLinkActive="active">Añadir usuario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/show_all_points" routerLinkActive="active">Mostrar partidas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/add_play" routerLinkActive="active">Añadir partida</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/show_comments" routerLinkActive="active">Mostrar comentarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/comments" routerLinkActive="active">Comentarios</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logout" routerLinkActive="active">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>

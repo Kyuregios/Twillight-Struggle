@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th>Jugador</th>
+        <th>Rival</th>
+        <th>Puntos</th>
+        <th>Ganado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let juego of partidas">
+        <td>{{ juego.player }}</td>
+        <td>{{ juego.rival }}</td>
+        <td>{{ juego.points }}</td>
+        <td>{{ juego.win ? 'Sí' : 'No' }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="eliminarPartida(juego.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

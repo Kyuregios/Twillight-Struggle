@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <form [formGroup]="registroForm">
+      <div class="form-group">
+        <label for="username">Nombre:</label>
+        <input type="text" class="form-control" formControlName="username" id="username" placeholder="Nombre">
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" class="form-control" formControlName="email" id="email" placeholder="Correo electrónico">
+      </div>
+      <div class="form-group">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" class="form-control" formControlName="password" id="password" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="confirmarContraseña">Confirmar Contraseña:</label>
+        <input type="password" class="form-control" formControlName="confirmarContraseña" id="confirmarContraseña" placeholder="">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="registroForm.invalid" (click)="registrarUsuario()">Registrarse</button>
+    </form>
+    <p>¿Ya tienes cuenta? <a routerLink="/login" routerLinkActive="active">Inicia sesión</a></p>
+</div>  

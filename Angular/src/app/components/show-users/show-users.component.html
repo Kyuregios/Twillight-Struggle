@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.username }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>
+            <button class="btn btn-info" (click)="cargarUsuario(usuario)">Editar</button>
+            <button class="btn btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Formulario de Edición -->
+    <div class="col-md-6 offset-md-3" *ngIf="showEditForm">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="mt-4">
+        <div class="form-group">
+          <label for="username">Nombre</label>
+          <input type="text" class="form-control" id="username" formControlName="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="editForm.invalid">Guardar</button>
+      </form>
+    </div>
+</div>
